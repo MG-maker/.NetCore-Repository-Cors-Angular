@@ -1,0 +1,54 @@
+  
+  table {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    min-width: 500px;
+  }
+  th.mat-header-cell {
+    text-align: left;
+    max-width: 300px;
+  }
+
+  /* <div> in one line */
+
+  .child {
+    /* background: #eee;
+    border: 1px solid #ccc; */
+    padding: 10px;
+    float: left;
+    width: 48%;
+    margin-right: 2%;
+    margin-bottom: 20px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+  /* material colors */
+
+  .example-button-row button
+ {
+  margin-right: 8px;
+}
+
+  .mat-button.mat-success,
+.mat-stroked-button.mat-success {
+    color: #155724;
+}
+.mat-button.mat-success:hover,
+.mat-stroked-button.mat-success:hover {
+  background-color: #f0fff3;
+}
+
+.mat-raised-button.mat-success,
+.mat-flat-button.mat-success,
+.mat-fab.mat-success,
+.mat-mini-fab.mat-success {
+  color: #f0fff3;
+  background-color: #155724;
+}
+
+.mat-icon-button.mat-success {
+  color:#155724;
+}

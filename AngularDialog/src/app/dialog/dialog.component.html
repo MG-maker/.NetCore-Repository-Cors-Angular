@@ -1,0 +1,27 @@
+
+<h1 mat-dialog-title><strong>{{action}} User</strong></h1>
+
+<form class="mat-dialog-content" #myForm="ngForm" (ngSubmit)="submit()">
+    <div class="form">
+ <!-- != значит что используется один диалог для update и create -->
+  <mat-form-field *ngIf="action != 'Delete'; else elseTemplate" color="accent">
+    <input  placeholder="{{action}} Name" name="name"  matInput [(ngModel)]="local_data.name"  maxlength="15" pattern="[A-Za-z]{3,}" required>
+    <mat-error *ngIf="myForm.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+</div>
+<div class="form">
+  <mat-form-field *ngIf="action != 'Delete'" color="accent">
+    <input placeholder="{{action}} Age" name="age" matInput [(ngModel)]="local_data.age" pattern="^((?!(0))[0-9]{1,2})$" required>
+    <mat-error *ngIf="myForm.invalid">{{getErrorMessage2()}}</mat-error>
+  </mat-form-field>
+</div>
+  <ng-template #elseTemplate>
+    <div *ngIf="action == 'Delete'">Are you sure you want to delete "{{local_data.name}}"?</div>  
+  </ng-template>
+<div mat-dialog-actions>
+    <button mat-button [type]="submit" [disabled]="!myForm.valid" (click)="doAction()" mat-flat-button color="primary">{{action}}</button>
+    <button mat-button (click)="closeDialog()" mat-flat-button color="warn">Cancel</button>
+  </div>
+</form>
+
+
